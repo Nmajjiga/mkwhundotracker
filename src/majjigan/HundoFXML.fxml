@@ -168,17 +168,17 @@
       </Text>
       <ImageView fx:id="powImg" fitHeight="52.0" fitWidth="72.0" layoutX="216.0" layoutY="109.0" pickOnBounds="true">
          <image>
-            <Image url="@../../resources/sprites/POW.PNG" />
+            <Image url="@../../sprites/POW.PNG" />
          </image>
       </ImageView>
       <ImageView fx:id="lightningImg" fitHeight="48.0" fitWidth="72.0" layoutX="215.0" layoutY="58.0" pickOnBounds="true">
          <image>
-            <Image url="@../../resources/sprites/lightning.PNG" />
+            <Image url="@../../sprites/lightning.PNG" />
          </image>
       </ImageView>
       <ImageView fx:id="blueImg" fitHeight="47.0" fitWidth="71.0" layoutX="215.0" layoutY="8.0" pickOnBounds="true">
          <image>
-            <Image url="@../../resources/sprites/blueshell.PNG" />
+            <Image url="@../../sprites/blueshell.PNG" />
          </image>
       </ImageView>
       <Text fx:id="bikeCounter" fill="WHITE" layoutX="80.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" wrappingWidth="41.46875">
@@ -188,17 +188,17 @@
       </Text>
       <ImageView fx:id="charImg" fitHeight="52.0" fitWidth="76.0" layoutX="10.0" layoutY="109.0" pickOnBounds="true">
          <image>
-            <Image url="@../../resources/sprites/character.PNG" />
+            <Image url="@../../sprites/character.PNG" />
          </image>
       </ImageView>
       <ImageView fx:id="bikeImg" fitHeight="45.0" fitWidth="74.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true">
          <image>
-            <Image url="@../../resources/sprites/bike.png" />
+            <Image url="@../../sprites/bike.png" />
          </image>
       </ImageView>
       <ImageView fx:id="kartImg" fitHeight="46.0" fitWidth="77.0" layoutX="10.0" layoutY="59.0" pickOnBounds="true">
          <image>
-            <Image url="@../../resources/sprites/kart.PNG" />
+            <Image url="@../../sprites/kart.PNG" />
          </image>
       </ImageView>
       <Text fill="WHITE" layoutX="120.0" layoutY="4.0" strokeType="OUTSIDE" strokeWidth="0.0" text="    /  9" wrappingWidth="47.16796875">
@@ -238,7 +238,7 @@
       </Text>
       <ImageView fx:id="miscImg" fitHeight="47.0" fitWidth="71.0" layoutX="388.0" layoutY="8.0" pickOnBounds="true">
          <image>
-            <Image url="@../../resources/sprites/misc.PNG" />
+            <Image url="@../../sprites/misc.PNG" />
          </image>
       </ImageView>
       <Text fx:id="miscCounter" fill="WHITE" layoutX="463.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="82.93749999999994">
@@ -248,7 +248,7 @@
       </Text>
       <ImageView fx:id="lakImg" fitHeight="51.0" fitWidth="73.0" layoutX="387.0" layoutY="57.0" pickOnBounds="true">
          <image>
-            <Image url="@../../resources/sprites/lakitu.PNG" />
+            <Image url="@../../sprites/lakitu.PNG" />
          </image>
       </ImageView>
       <Text fx:id="fallCounter" fill="WHITE" layoutX="463.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="82.93749999999994">

@@ -1,8 +1,11 @@
 package majjigan;
 
+import javafx.application.Application;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -16,25 +19,26 @@ import javafx.stage.Stage;
 import javafx.scene.input.KeyEvent;
 import java.util.Objects;
 
-public class HundoController {
+
+public class HundoController extends Application {
     @FXML
     private Pane myPane;
     @FXML
-    private ImageView lakImg;
+    private ImageView lakImg = new ImageView();
     @FXML
-    private ImageView miscImg;
+    private ImageView miscImg = new ImageView();
     @FXML
-    private ImageView kartImg;
+    private ImageView kartImg = new ImageView();
     @FXML
-    private ImageView bikeImg;
+    private ImageView bikeImg = new ImageView();
     @FXML
-    private ImageView charImg;
+    private ImageView charImg = new ImageView();
     @FXML
-    private ImageView blueImg;
+    private ImageView blueImg = new ImageView();
     @FXML
-    private ImageView lightningImg;
+    private ImageView lightningImg = new ImageView();
     @FXML
-    private ImageView powImg;
+    private ImageView powImg = new ImageView();
     @FXML
     private Text bikeCounter;
     @FXML
@@ -52,16 +56,35 @@ public class HundoController {
     @FXML
     private Text fallCounter;
 
+    public static void main(String[] args) {
+        launch(args);
+    }
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("HundoFXML.fxml"));
+        Parent root = loader.load();
+
+        primaryStage.setTitle("MKW 100% Tracker");
+        primaryStage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("/wheel.png"))));
+
+        primaryStage.setScene(new Scene(root));
+        primaryStage.setResizable(false);
+
+        primaryStage.show();
+    }
+
     public void turnOnIcons() {
-        myPane.setBackground(new Background(new BackgroundFill(Color.valueOf("#000000"), new CornerRadii(0), new Insets(0))));
-        lakImg.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("/sprites/lakitu.png"))));
-        miscImg.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("/sprites/misc.png"))));
-        kartImg.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("/sprites/kart.png"))));
-        bikeImg.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("/sprites/bike.png"))));
-        charImg.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("/sprites/character.png"))));
-        blueImg.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("/sprites/blueshell.png"))));
-        lightningImg.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("/sprites/lightning.png"))));
-        powImg.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("/sprites/POW.png"))));
+        System.out.println("Turning on Icons!");
+        myPane.setBackground(new Background(new BackgroundFill(Color.color(0, 0, 0), new CornerRadii(0), new Insets(0))));
+        lakImg.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("/lakitu.png"))));
+        miscImg.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("/misc.png"))));
+        kartImg.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("/kart.png"))));
+        bikeImg.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("/bike.png"))));
+        charImg.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("/character.png"))));
+        blueImg.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("/blueshell.png"))));
+        lightningImg.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("/lightning.png"))));
+        powImg.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("/POW.png"))));
     }
 
     public void openUnlockList() {
@@ -70,7 +93,8 @@ public class HundoController {
         popupStage.setTitle("Unlock Everything Graphic");
 
         ImageView imageView = new ImageView();
-        Image image = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/sprites/UnlockablesList.png")));
+        Image image = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/UnlockablesList.png")));
+
         imageView.setImage(image);
         imageView.setPreserveRatio(true);
 
