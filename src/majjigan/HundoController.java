@@ -4,16 +4,16 @@ import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-import java.io.IOException;
+import javafx.scene.input.KeyEvent;
 import java.util.Objects;
 
 public class HundoController {
@@ -51,9 +51,6 @@ public class HundoController {
     private Text POWCounter;
     @FXML
     private Text fallCounter;
-    @FXML
-    private Button unlockList;
-    private final Stage kernelStage = new Stage();
 
     public void turnOnIcons() {
         myPane.setBackground(new Background(new BackgroundFill(Color.valueOf("#000000"), new CornerRadii(0), new Insets(0))));
@@ -226,6 +223,33 @@ public class HundoController {
     }
     public void resetFalls() {
         fallCounter.setText("0");
+    }
+
+    public void hotkeyNewCount(KeyEvent e) {
+        if (e.getCode() == KeyCode.Q) {
+            increaseBikeCount();
+        }
+        if (e.getCode() == KeyCode.W) {
+            increaseKartCount();
+        }
+        if (e.getCode() == KeyCode.E) {
+            increaseCharacterCount();
+        }
+        if (e.getCode() == KeyCode.R) {
+            increaseBlueShellCount();
+        }
+        if (e.getCode() == KeyCode.T) {
+            increaseLightningCount();
+        }
+        if (e.getCode() == KeyCode.Y) {
+            increasePOWCount();
+        }
+        if (e.getCode() == KeyCode.U) {
+            increaseMiscCount();
+        }
+        if (e.getCode() == KeyCode.I) {
+            increaseFallCount();
+        }
     }
 }
 
