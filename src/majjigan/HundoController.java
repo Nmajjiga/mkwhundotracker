@@ -3,10 +3,10 @@ package majjigan;
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ColorPicker;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
@@ -24,21 +24,7 @@ public class HundoController extends Application {
     @FXML
     private Pane myPane;
     @FXML
-    private ImageView lakImg = new ImageView();
-    @FXML
-    private ImageView miscImg = new ImageView();
-    @FXML
-    private ImageView kartImg = new ImageView();
-    @FXML
-    private ImageView bikeImg = new ImageView();
-    @FXML
-    private ImageView charImg = new ImageView();
-    @FXML
-    private ImageView blueImg = new ImageView();
-    @FXML
-    private ImageView lightningImg = new ImageView();
-    @FXML
-    private ImageView powImg = new ImageView();
+    private ColorPicker colorPicker;
     @FXML
     private Text bikeCounter;
     @FXML
@@ -65,8 +51,8 @@ public class HundoController extends Application {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("HundoFXML.fxml"));
         Parent root = loader.load();
 
+        primaryStage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("wheel.png"))));
         primaryStage.setTitle("MKW 100% Tracker");
-        primaryStage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("/wheel.png"))));
 
         primaryStage.setScene(new Scene(root));
         primaryStage.setResizable(false);
@@ -74,17 +60,9 @@ public class HundoController extends Application {
         primaryStage.show();
     }
 
-    public void turnOnIcons() {
-        System.out.println("Turning on Icons!");
-        myPane.setBackground(new Background(new BackgroundFill(Color.color(0, 0, 0), new CornerRadii(0), new Insets(0))));
-        lakImg.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("/lakitu.png"))));
-        miscImg.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("/misc.png"))));
-        kartImg.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("/kart.png"))));
-        bikeImg.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("/bike.png"))));
-        charImg.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("/character.png"))));
-        blueImg.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("/blueshell.png"))));
-        lightningImg.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("/lightning.png"))));
-        powImg.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("/POW.png"))));
+    public void changeBackgroundColor() {
+        Color myColor = colorPicker.getValue();
+        myPane.setBackground(new Background(new BackgroundFill(myColor, null, null)));
     }
 
     public void openUnlockList() {
@@ -93,7 +71,7 @@ public class HundoController extends Application {
         popupStage.setTitle("Unlock Everything Graphic");
 
         ImageView imageView = new ImageView();
-        Image image = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/UnlockablesList.png")));
+        Image image = new Image(Objects.requireNonNull(getClass().getResourceAsStream("UnlockablesList.png")));
 
         imageView.setImage(image);
         imageView.setPreserveRatio(true);
@@ -276,6 +254,5 @@ public class HundoController extends Application {
         }
     }
 }
-
 
 
