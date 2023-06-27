@@ -13,17 +13,13 @@ public class HundoMain extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        // Load the FXML file
+        //Sets up first window
         FXMLLoader loader = new FXMLLoader(getClass().getResource("HundoFXML.fxml"));
         Parent root = loader.load();
-
-        // Create the scene
-        Scene scene = new Scene(root);
-
-        // Set the scene on the primary stage
-        primaryStage.setScene(scene);
+        primaryStage.setTitle("MKW 100% Tracker");
+        primaryStage.setScene(new Scene(root));
         primaryStage.setResizable(false);
-        primaryStage.setTitle("Hundo Tracker");
+
         primaryStage.show();
     }
 }

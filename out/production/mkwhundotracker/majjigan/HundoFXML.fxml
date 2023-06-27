@@ -8,9 +8,14 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane fx:id="myPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="827.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="majjigan.HundoController">
+<Pane fx:id="myPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="majjigan.HundoController">
    <children>
-      <Button fx:id="imageButton" layoutX="4.0" layoutY="335.0" mnemonicParsing="false" onMousePressed="#turnOnIcons" prefHeight="20.0" prefWidth="258.0" text="Click to turn on icons, counter and background" textAlignment="CENTER">
+      <Button fx:id="imageButton" layoutX="3.0" layoutY="335.0" mnemonicParsing="false" onMousePressed="#turnOnIcons" prefHeight="24.0" prefWidth="197.0" text="Click to turn on icons and counter" textAlignment="CENTER">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="unlockList" layoutX="202.0" layoutY="335.0" mnemonicParsing="false" onMousePressed="#openUnlockList" prefHeight="24.0" prefWidth="344.0" text="Click to show the list of unlockables in the game" textAlignment="CENTER">
          <font>
             <Font size="11.0" />
          </font>
@@ -19,47 +24,47 @@
          <children>
             <Pane prefHeight="162.0" prefWidth="136.0">
                <children>
-                  <Button fx:id="bikePlus" layoutX="2.0" layoutY="1.0" mnemonicParsing="false" onMousePressed="#increaseBikeCount" prefHeight="28.0" prefWidth="69.0" text="Bike (+1) [1]" textAlignment="JUSTIFY">
-                     <font>
-                        <Font size="10.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="bikeMinus" layoutX="2.0" layoutY="31.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="69.0" text="Bike (-1) [Q]">
-                     <font>
-                        <Font size="10.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="bikeZero" layoutX="2.0" layoutY="59.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="69.0" text="Bike (0) ">
-                     <font>
-                        <Font size="10.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="kartPlus" layoutX="70.0" layoutY="1.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="62.0" text="Kart (+1) [2]" textAlignment="JUSTIFY">
+                  <Button fx:id="bikePlus" layoutX="2.0" layoutY="1.0" mnemonicParsing="false" onKeyPressed="#increaseBikeCount" onMousePressed="#increaseBikeCount" prefHeight="28.0" prefWidth="71.0" text="Bike (+1) [Q]" textAlignment="JUSTIFY">
                      <font>
                         <Font size="9.0" />
                      </font>
                   </Button>
-                  <Button fx:id="kartMinus" layoutX="70.0" layoutY="31.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="62.0" text="Kart (-1) [W]" textAlignment="JUSTIFY">
+                  <Button fx:id="bikeMinus" layoutX="2.0" layoutY="31.0" mnemonicParsing="false" onMouseClicked="#decreaseBikeCount" prefHeight="26.0" prefWidth="69.0" text="Bike (-1) ">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="bikeZero" layoutX="2.0" layoutY="59.0" mnemonicParsing="false" onMouseClicked="#resetBike" prefHeight="25.0" prefWidth="69.0" text="Bike (0) ">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="kartPlus" layoutX="70.0" layoutY="1.0" mnemonicParsing="false" onMousePressed="#increaseKartCount" prefHeight="28.0" prefWidth="62.0" text="Kart (+1) [W]" textAlignment="JUSTIFY">
+                     <font>
+                        <Font size="8.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="kartMinus" layoutX="70.0" layoutY="31.0" mnemonicParsing="false" onMouseClicked="#decreaseKartCount" prefHeight="26.0" prefWidth="62.0" text="Kart (-1) " textAlignment="JUSTIFY">
                      <font>
                         <Font size="9.0" />
                      </font>
                   </Button>
-                  <Button fx:id="kartZero" layoutX="70.0" layoutY="59.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="62.0" text="Kart (0)">
+                  <Button fx:id="kartZero" layoutX="70.0" layoutY="59.0" mnemonicParsing="false" onMouseClicked="#resetKart" prefHeight="25.0" prefWidth="62.0" text="Kart (0)">
                      <font>
                         <Font size="10.0" />
                      </font>
                   </Button>
-                  <Button fx:id="charactersPlus" layoutX="2.0" layoutY="86.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="131.0" text="Characters (+1) [3]">
+                  <Button fx:id="charactersPlus" layoutX="2.0" layoutY="86.0" mnemonicParsing="false" onMousePressed="#increaseCharacterCount" prefHeight="24.0" prefWidth="131.0" text="Characters (+1) [E]">
                      <font>
                         <Font size="10.0" />
                      </font>
                   </Button>
-                  <Button fx:id="charactersMinus" layoutX="2.0" layoutY="111.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="131.0" text="Characters (-1) [E]">
+                  <Button fx:id="charactersMinus" layoutX="2.0" layoutY="111.0" mnemonicParsing="false" onMouseClicked="#decreaseCharacterCount" prefHeight="25.0" prefWidth="131.0" text="Characters (-1) ">
                      <font>
                         <Font size="10.0" />
                      </font>
                   </Button>
-                  <Button fx:id="characterZero" layoutX="2.0" layoutY="138.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="131.0" text="Characters (0)">
+                  <Button fx:id="characterZero" layoutX="2.0" layoutY="138.0" mnemonicParsing="false" onMouseClicked="#resetCharacter" prefHeight="24.0" prefWidth="131.0" text="Characters (0)">
                      <font>
                         <Font size="10.0" />
                      </font>
@@ -68,79 +73,79 @@
             </Pane>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Pane prefHeight="162.0" prefWidth="411.0">
+                  <Pane prefHeight="162.0" prefWidth="297.0">
                      <children>
-                        <Button fx:id="bluePlus" layoutX="2.0" layoutY="2.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="132.0" text="Blue Shell (+1) [4]">
+                        <Button fx:id="bluePlus" layoutX="2.0" layoutY="2.0" mnemonicParsing="false" onMousePressed="#increaseBlueShellCount" prefHeight="25.0" prefWidth="132.0" text="Blue Shell (+1) [R]">
                            <font>
                               <Font size="10.0" />
                            </font>
                         </Button>
-                        <Button fx:id="blueMinus" layoutX="2.0" layoutY="29.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="132.0" text="Blue Shell (-1) [R]">
+                        <Button fx:id="blueMinus" layoutX="2.0" layoutY="29.0" mnemonicParsing="false" onMouseClicked="#decreaseBlueShellCount" prefHeight="25.0" prefWidth="132.0" text="Blue Shell (-1) ">
                            <font>
                               <Font size="10.0" />
                            </font>
                         </Button>
-                        <Button fx:id="blueZero" layoutX="2.0" layoutY="57.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="132.0" text="Blue Shell (0)">
+                        <Button fx:id="blueZero" layoutX="2.0" layoutY="57.0" mnemonicParsing="false" onMouseClicked="#resetBlueShell" prefHeight="26.0" prefWidth="132.0" text="Blue Shell (0)">
                            <font>
                               <Font size="10.0" />
                            </font>
                         </Button>
-                        <Button fx:id="powPlus" layoutX="278.0" layoutY="2.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="132.0" text="POW (+1) [6]">
+                        <Button fx:id="powPlus" layoutX="278.0" layoutY="2.0" mnemonicParsing="false" onMousePressed="#increasePOWCount" prefHeight="25.0" prefWidth="132.0" text="POW (+1) [Y]">
                            <font>
                               <Font size="10.0" />
                            </font>
                         </Button>
-                        <Button fx:id="lightningPlus" layoutX="136.0" layoutY="2.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="140.0" text="Lightning (+1) [5]">
+                        <Button fx:id="lightningPlus" layoutX="136.0" layoutY="2.0" mnemonicParsing="false" onMousePressed="#increaseLightningCount" prefHeight="25.0" prefWidth="140.0" text="Lightning (+1) [T]">
                            <font>
                               <Font size="10.0" />
                            </font>
                         </Button>
-                        <Button fx:id="lightningMinus" layoutX="136.0" layoutY="29.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="140.0" text="Lightning (-1) [T]">
+                        <Button fx:id="lightningMinus" layoutX="136.0" layoutY="29.0" mnemonicParsing="false" onMouseClicked="#decreaseLightningCount" prefHeight="25.0" prefWidth="140.0" text="Lightning (-1) ">
                            <font>
                               <Font size="10.0" />
                            </font>
                         </Button>
-                        <Button fx:id="lightningZero" layoutX="136.0" layoutY="56.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="140.0" text="Lightning (0)">
+                        <Button fx:id="lightningZero" layoutX="136.0" layoutY="56.0" mnemonicParsing="false" onMouseClicked="#resetLightning" prefHeight="27.0" prefWidth="140.0" text="Lightning (0)">
                            <font>
                               <Font size="10.0" />
                            </font>
                         </Button>
-                        <Button fx:id="powMinus" layoutX="278.0" layoutY="29.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="132.0" text="POW (-1) [Y]">
+                        <Button fx:id="powMinus" layoutX="278.0" layoutY="29.0" mnemonicParsing="false" onMouseClicked="#decreasePOWCount" prefHeight="25.0" prefWidth="132.0" text="POW (-1) ">
                            <font>
                               <Font size="10.0" />
                            </font>
                         </Button>
-                        <Button fx:id="powZero" layoutX="278.0" layoutY="56.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="132.0" text="POW (0)">
+                        <Button fx:id="powZero" layoutX="278.0" layoutY="56.0" mnemonicParsing="false" onMouseClicked="#resetPOW" prefHeight="27.0" prefWidth="132.0" text="POW (0)">
                            <font>
                               <Font size="10.0" />
                            </font>
                         </Button>
-                        <Button fx:id="miscPlus" layoutX="2.0" layoutY="85.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="210.0" text="Miscellaneous (+1) [7]">
+                        <Button fx:id="miscPlus" layoutX="2.0" layoutY="85.0" mnemonicParsing="false" onMousePressed="#increaseMiscCount" prefHeight="26.0" prefWidth="210.0" text="Miscellaneous (+1) [U]">
                            <font>
                               <Font size="10.0" />
                            </font>
                         </Button>
-                        <Button fx:id="miscMinus" layoutX="2.0" layoutY="113.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="210.0" text="Miscellaneous (-1) [U]">
+                        <Button fx:id="miscMinus" layoutX="2.0" layoutY="113.0" mnemonicParsing="false" onMouseClicked="#decreaseMiscCount" prefHeight="26.0" prefWidth="210.0" text="Miscellaneous (-1) ">
                            <font>
                               <Font size="10.0" />
                            </font>
                         </Button>
-                        <Button fx:id="miscZero" layoutX="2.0" layoutY="141.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="210.0" text="Miscellaneous (0)">
+                        <Button fx:id="miscZero" layoutX="2.0" layoutY="141.0" mnemonicParsing="false" onMouseClicked="#resetMisc" prefHeight="15.0" prefWidth="210.0" text="Miscellaneous (0)">
                            <font>
                               <Font size="10.0" />
                            </font>
                         </Button>
-                        <Button fx:id="fallPlus" layoutX="213.0" layoutY="85.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="197.0" text="Falls/Lakitu Pickups (+1) [8]">
+                        <Button fx:id="fallPlus" layoutX="213.0" layoutY="85.0" mnemonicParsing="false" onMousePressed="#increaseFallCount" prefHeight="26.0" prefWidth="197.0" text="Falls/Lakitu Pickups (+1) [I]">
                            <font>
                               <Font size="10.0" />
                            </font>
                         </Button>
-                        <Button fx:id="fallMinus" layoutX="213.0" layoutY="113.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="197.0" text="Falls/Lakitu Pickups (-1) [I]">
+                        <Button fx:id="fallMinus" layoutX="213.0" layoutY="113.0" mnemonicParsing="false" onMouseClicked="#decreaseFallCount" prefHeight="26.0" prefWidth="197.0" text="Falls/Lakitu Pickups (-1) ">
                            <font>
                               <Font size="10.0" />
                            </font>
                         </Button>
-                        <Button fx:id="fallZero" layoutX="213.0" layoutY="141.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="197.0" text="Falls/Lakitu Pickups (0)">
+                        <Button fx:id="fallZero" layoutX="213.0" layoutY="141.0" mnemonicParsing="false" onMouseClicked="#resetFalls" prefHeight="21.0" prefWidth="197.0" text="Falls/Lakitu Pickups (0)">
                            <font>
                               <Font size="10.0" />
                            </font>
@@ -151,17 +156,12 @@
             </HBox>
          </children>
       </HBox>
-      <ImageView fx:id="unlockablesImg" fitHeight="359.0" fitWidth="277.0" layoutX="555.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../resources/sprites/UnlockablesList.png" />
-         </image>
-      </ImageView>
       <Text fx:id="blueShellCounter" fill="WHITE" layoutX="291.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="82.93749999999994">
          <font>
             <Font size="30.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="265.0" layoutY="351.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Use the buttons above to control the counters for each section!">
+      <Text fill="WHITE" layoutX="265.0" layoutY="351.0" strokeType="OUTSIDE" strokeWidth="0.0">
          <font>
             <Font size="10.0" />
          </font>
