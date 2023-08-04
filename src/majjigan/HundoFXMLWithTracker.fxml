@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane fx:id="myPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#hotkeyNewCount" onMouseEntered="#checkForHundo" prefHeight="402.0" prefWidth="887.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="majjigan.HundoController">
+   <children>
+      <ImageView fx:id="background" fitHeight="432.0" fitWidth="914.0" layoutX="-21.0" layoutY="-21.0" pickOnBounds="true">
+         <image>
+            <Image url="@defbackgroundimg.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="52.0" fitWidth="71.0" layoutX="215.0" layoutY="108.0" pickOnBounds="true">
+         <image>
+            <Image url="@sprites/miscUnlocks.png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="4.0" layoutY="170.0" prefHeight="205.0" prefWidth="572.0">
+         <children>
+            <Button layoutX="1.0" layoutY="-1.0" mnemonicParsing="false" onMouseClicked="#increaseBlueShellCount" prefHeight="31.0" prefWidth="282.0" text="Blue Shell + [1]">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
+            <Button layoutX="294.0" layoutY="127.0" mnemonicParsing="false" onMouseClicked="#resetBlueShellCount" prefHeight="43.0" prefWidth="124.0" text="Reset Blue Shell Counter">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
+            <Button layoutX="1.0" layoutY="127.0" mnemonicParsing="false" onAction="#resetLightning" onMouseClicked="#resetLightning" prefHeight="43.0" prefWidth="124.0" text="Reset Lightning Counter">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
+            <Button fx:id="unlockList" layoutX="2.0" layoutY="174.0" mnemonicParsing="false" onMouseClicked="#openUnlockList" prefHeight="31.0" prefWidth="572.0" text="Click to show the list of unlockables in the game (Graphic Popup)" textAlignment="CENTER">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="127.0" layoutY="127.0" mnemonicParsing="false" onMouseClicked="#resetFallCount" prefHeight="43.0" prefWidth="165.0" text="Reset Falls/Lakitu Pickup Counter">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
+            <Button layoutX="420.0" layoutY="127.0" mnemonicParsing="false" onMouseClicked="#resetMiscCount" prefHeight="43.0" prefWidth="152.0" text="Reset Miscellaneous Counter">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
+            <Button layoutX="284.0" mnemonicParsing="false" onMouseClicked="#increaseLightningCount" prefHeight="30.0" prefWidth="287.0" text="Lightning + [2]">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
+            <Button layoutX="1.0" layoutY="32.0" mnemonicParsing="false" onMouseClicked="#decreaseBlueShellCount" prefHeight="29.0" prefWidth="282.0" text="Blue Shell - [Q]">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
+            <Button layoutX="284.0" layoutY="32.0" mnemonicParsing="false" onMouseClicked="#decreaseLightningCount" prefHeight="30.0" prefWidth="287.0" text="Lightning - [W]">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
+            <Button layoutX="1.0" layoutY="63.0" mnemonicParsing="false" onMouseClicked="#increaseMiscCount" prefHeight="29.0" prefWidth="282.0" text="Miscellaneous + [3]">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
+            <Button layoutX="1.0" layoutY="94.0" mnemonicParsing="false" onMouseClicked="#decreaseMiscCount" prefHeight="29.0" prefWidth="282.0" text="Miscellaneous - [E]">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
+            <Button layoutX="285.0" layoutY="63.0" mnemonicParsing="false" onMouseClicked="#increaseFallCount" prefHeight="29.0" prefWidth="285.0" text="Falls/Lakitu Pickup + [4]">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
+            <Button layoutX="285.0" layoutY="94.0" mnemonicParsing="false" onMouseClicked="#decreaseFallCount" prefHeight="29.0" prefWidth="285.0" text="Falls/Lakitu Pickup - [R]">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Text fx:id="blueShellCounter" fill="WHITE" layoutX="291.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="82.93749999999994">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="98.0" layoutY="400.0" stroke="BLACK" strokeType="OUTSIDE" text="Mario Kart Wii 100% Item Tracker v1.0 by GhostTSR" wrappingWidth="538.890625">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="265.0" layoutY="351.0" strokeType="OUTSIDE" strokeWidth="0.0">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Text>
+      <ImageView fx:id="lightningImg" fitHeight="48.0" fitWidth="72.0" layoutX="215.0" layoutY="58.0" pickOnBounds="true">
+         <image>
+            <Image url="@sprites/lightning.PNG" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="blueImg" fitHeight="47.0" fitWidth="71.0" layoutX="215.0" layoutY="5.0" pickOnBounds="true">
+         <image>
+            <Image url="@sprites/blueshell.PNG" />
+         </image>
+      </ImageView>
+      <Text fx:id="bikeCounter" fill="WHITE" layoutX="80.0" layoutY="44.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" wrappingWidth="41.46875">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <ImageView fx:id="charImg" fitHeight="52.0" fitWidth="76.0" layoutX="10.0" layoutY="109.0" pickOnBounds="true">
+         <image>
+            <Image url="@sprites/character.PNG" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="bikeImg" fitHeight="45.0" fitWidth="74.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true">
+         <image>
+            <Image url="@sprites/bike.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="kartImg" fitHeight="46.0" fitWidth="77.0" layoutX="10.0" layoutY="59.0" pickOnBounds="true">
+         <image>
+            <Image url="@sprites/kart.PNG" />
+         </image>
+      </ImageView>
+      <Text fill="WHITE" layoutX="120.0" layoutY="4.0" strokeType="OUTSIDE" strokeWidth="0.0" text="    /  9" wrappingWidth="47.16796875">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="88.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="    /  9">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="90.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="    / 14">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <Text fx:id="kartCounter" fill="WHITE" layoutX="81.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" wrappingWidth="41.46875">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <Text fx:id="characterCounter" fill="WHITE" layoutX="81.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" wrappingWidth="41.46875">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <Text fx:id="lightningCounter" fill="WHITE" layoutX="291.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="82.93749999999994">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <ImageView fx:id="miscImg" fitHeight="47.0" fitWidth="71.0" layoutX="388.0" layoutY="8.0" pickOnBounds="true">
+         <image>
+            <Image url="@sprites/misc.PNG" />
+         </image>
+      </ImageView>
+      <Text fx:id="miscCounter" fill="WHITE" layoutX="463.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="82.93749999999994">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <ImageView fx:id="lakImg" fitHeight="51.0" fitWidth="73.0" layoutX="387.0" layoutY="57.0" pickOnBounds="true">
+         <image>
+            <Image url="@sprites/lakitu.PNG" />
+         </image>
+      </ImageView>
+      <Text fx:id="fallCounter" fill="WHITE" layoutX="463.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="82.93749999999994">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <VBox layoutX="580.0" layoutY="4.0" prefHeight="448.0" prefWidth="57.0">
+         <children>
+            <ImageView fx:id="babyLuigi" fitHeight="57.0" fitWidth="57.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#babyLuigi" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@sprites/BabyLuigi.png" />
+               </image></ImageView>
+            <ImageView fx:id="babyDaisy" fitHeight="57.0" fitWidth="57.0" onMouseClicked="#babyDaisy" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@sprites/babydaisy.png" />
+               </image></ImageView>
+            <ImageView fx:id="dryBones" fitHeight="57.0" fitWidth="57.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#dryBones" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@sprites/DryBones.png" />
+               </image></ImageView>
+            <ImageView fx:id="toadette" fitHeight="57.0" fitWidth="57.0" layoutX="10.0" layoutY="48.0" onMouseClicked="#toadette" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@sprites/toadette.png" />
+               </image></ImageView>
+            <ImageView fx:id="bowserJr" fitHeight="57.0" fitWidth="57.0" layoutX="10.0" layoutY="86.0" onMouseClicked="#babyBowser" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@sprites/bowserjr.png" />
+               </image></ImageView>
+            <ImageView fx:id="birdo" fitHeight="57.0" fitWidth="57.0" layoutX="10.0" layoutY="124.0" onMouseClicked="#birdo" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@sprites/birdo.png" />
+               </image></ImageView>
+            <ImageView fx:id="daisy" fitHeight="57.0" fitWidth="57.0" layoutX="10.0" layoutY="295.0" onMouseClicked="#daisy" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@sprites/daisy.png" />
+               </image></ImageView>
+         </children>
+      </VBox>
+      <VBox layoutX="637.0" layoutY="4.0" prefHeight="348.0" prefWidth="57.0">
+         <children>
+            <ImageView fx:id="diddyKong" fitHeight="57.0" fitWidth="57.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#diddy" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@sprites/diddykong.png" />
+               </image></ImageView>
+            <ImageView fx:id="rosa" fitHeight="57.0" fitWidth="57.0" onMouseClicked="#rosa" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@sprites/rosalina.png" />
+               </image></ImageView>
+            <ImageView fx:id="kingBoo" fitHeight="57.0" fitWidth="57.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#kingboo" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@sprites/kingboo.png" />
+               </image></ImageView>
+            <ImageView fx:id="funky" fitHeight="57.0" fitWidth="57.0" layoutX="10.0" layoutY="48.0" onMouseClicked="#funky" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@sprites/funkykong.png" />
+               </image></ImageView>
+            <ImageView fx:id="dryBowser" fitHeight="57.0" fitWidth="57.0" layoutX="10.0" layoutY="86.0" onMouseClicked="#dryBowser" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@sprites/drybowser.png" />
+               </image></ImageView>
+            <ImageView fx:id="miiA" fitHeight="57.0" fitWidth="57.0" layoutX="10.0" layoutY="124.0" onMouseClicked="#mii1" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@sprites/miioutfitA.png" />
+               </image></ImageView>
+            <ImageView fx:id="miiB" fitHeight="57.0" fitWidth="57.0" layoutX="10.0" layoutY="295.0" onMouseClicked="#mii2" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@sprites/miioutfitB.png" />
+               </image></ImageView>
+         </children>
+      </VBox>
+      <VBox layoutX="697.0" layoutY="4.0" prefHeight="348.0" prefWidth="57.0">
+         <children>
+            <ImageView fx:id="titan" fitHeight="57.0" fitWidth="57.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#titan" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@sprites/tinytitan.png" />
+               </image></ImageView>
+            <ImageView fx:id="cheep" fitHeight="57.0" fitWidth="57.0" onMouseClicked="#cheep" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@sprites/cheepcharger.png" />
+               </image></ImageView>
+            <ImageView fx:id="falcon" fitHeight="57.0" fitWidth="57.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#falconBlue" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@sprites/bluefalcon.png" />
+               </image></ImageView>
+            <ImageView fx:id="quacker" fitHeight="57.0" fitWidth="57.0" layoutX="10.0" layoutY="48.0" onMouseClicked="#quacker" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@sprites/quacker.png" />
+               </image></ImageView>
+            <ImageView fx:id="magi" fitHeight="57.0" fitWidth="57.0" layoutX="10.0" layoutY="86.0" onMouseClicked="#magikrusier" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@sprites/magikrusier.png" />
+               </image></ImageView>
+            <ImageView fx:id="bubbleBike" fitHeight="57.0" fitWidth="57.0" layoutX="10.0" layoutY="124.0" onMouseClicked="#jetBike" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@sprites/jetbubblebike.png" />
+               </image></ImageView>
+            <ImageView fx:id="bloop" fitHeight="57.0" fitWidth="57.0" layoutX="10.0" layoutY="295.0" onMouseClicked="#superBlooper" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@sprites/superblooper.png" />
+               </image></ImageView>
+         </children>
+      </VBox>
+      <VBox layoutX="755.0" layoutY="2.0" prefHeight="348.0" prefWidth="57.0">
+         <children>
+            <ImageView fx:id="daytripper" fitHeight="57.0" fitWidth="57.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#daytripper" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@sprites/daytripper.png" />
+               </image></ImageView>
+            <ImageView fx:id="bDasher" fitHeight="57.0" fitWidth="57.0" onMouseClicked="#bDasher2" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@sprites/sprinter_bdashermk2.png" />
+               </image></ImageView>
+            <ImageView fx:id="zip" fitHeight="57.0" fitWidth="57.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#zipzip" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@sprites/zipzip.png" />
+               </image></ImageView>
+            <ImageView fx:id="sneak" fitHeight="57.0" fitWidth="57.0" layoutX="10.0" layoutY="48.0" onMouseClicked="#sneakster" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@sprites/sneakster_nitrocycle.png" />
+               </image></ImageView>
+            <ImageView fx:id="dolphin" fitHeight="57.0" fitWidth="57.0" layoutX="10.0" layoutY="86.0" onMouseClicked="#dolphinBike" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@sprites/dolphindasher.png" />
+               </image></ImageView>
+            <ImageView fx:id="pirahna" fitHeight="57.0" fitWidth="57.0" layoutX="10.0" layoutY="124.0" onMouseClicked="#prowler" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@sprites/pirahnaprowler.png" />
+               </image></ImageView>
+            <ImageView fx:id="jetsetter" fitHeight="57.0" fitWidth="57.0" layoutX="10.0" layoutY="295.0" onMouseClicked="#jetsetter" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@sprites/jetsetter.png" />
+               </image></ImageView>
+         </children>
+      </VBox>
+      <VBox layoutX="818.0" layoutY="4.0" prefHeight="348.0" prefWidth="57.0">
+         <children>
+            <ImageView fx:id="honeyCoupe" fitHeight="57.0" fitWidth="57.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#honeycoupe" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@sprites/honeycoupe.png" />
+               </image></ImageView>
+            <ImageView fx:id="starBike" fitHeight="57.0" fitWidth="57.0" onMouseClicked="#shootingStar" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@sprites/shootingstar.png" />
+               </image></ImageView>
+            <ImageView fx:id="spear" fitHeight="57.0" fitWidth="57.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#spear" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@sprites/spear_torpedo.png" />
+               </image></ImageView>
+            <ImageView fx:id="phantom" fitHeight="57.0" fitWidth="57.0" layoutX="10.0" layoutY="48.0" onMouseClicked="#phantom" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@sprites/phantom.png" />
+               </image></ImageView>
+            <ImageView fx:id="bikes50" fitHeight="57.0" fitWidth="57.0" layoutX="10.0" layoutY="86.0" onMouseClicked="#bikes50" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@sprites/bikes50cc.png" />
+               </image></ImageView>
+            <ImageView fx:id="karts100" fitHeight="57.0" fitWidth="57.0" layoutX="10.0" layoutY="124.0" onMouseClicked="#karts100" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@sprites/karts100cc.png" />
+               </image></ImageView>
+            <ImageView fx:id="mirror" fitHeight="57.0" fitWidth="57.0" layoutX="10.0" layoutY="295.0" onMouseClicked="#mirrorMode" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@sprites/mirrormode.png" />
+               </image></ImageView>
+         </children>
+      </VBox>
+      <Text fill="WHITE" layoutX="285.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" text="    / 3" wrappingWidth="82.93749999999989">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <Text fx:id="miscUnlocksCounter" fill="WHITE" layoutX="279.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" wrappingWidth="41.46875">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <ImageView fx:id="congratsDisplay" disable="true" fitHeight="52.0" fitWidth="200.0" layoutX="367.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@sprites/Congrats!.png" />
+         </image>
+      </ImageView>
+   </children>
+</Pane>
